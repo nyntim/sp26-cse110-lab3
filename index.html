@@ -1,8 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <meta charset="UTF-8" />
+    <title>Science-Based Fitness App — Architecture Review</title>
   </head>
   <body>
+    <header>
+      <h1>Science-Based Fitness App — Architecture Review</h1>
+      <h2>Architecture Review</h2>
+      <h3>Date: April 10, 2026</h3>
+    </header>
+
+    <main>
+      <section id="attendance">
+        <h2>Attendance</h2>
+        <ul>
+          <li>Tim Nguyen — Frontend Lead</li>
+          <li>Mikey Nguyen — Backend Lead</li>
+          <li>Dan Bui — Research Lead</li>
+          <li>Andy Trinh — Database Engineer</li>
+          <li>Ethan Huynh — Project Manager</li>
+        </ul>
+      </section>
+
+      <section id="agenda">
+        <h2>Agenda</h2>
+        <ol>
+          <li>Review system architecture diagram</li>
+          <li>Decide on API design for the exercise database</li>
+          <li>Finalize schema for exercises and research citations</li>
+          <li>Discuss user authentication approach</li>
+          <li>Assign tasks for next sprint</li>
+        </ol>
+      </section>
+
+      <section id="unfinished-business">
+        <h2>Unfinished Business</h2>
+        <ul>
+          <li>Source list of peer-reviewed studies not yet finalized — Dan to submit a curated list of 20 studies by April 14.</li>
+          <li>Workout categorization taxonomy still undecided — team to vote asynchronously on the proposed taxonomy before next meeting.</li>
+        </ul>
+      </section>
+
+      <section id="new-business">
+        <h2>New Business</h2>
+        <article>
+          <h3>REST vs GraphQL for the Exercise Database API</h3>
+          <p>The team chose REST for the initial release due to simpler caching and team familiarity. GraphQL will be reconsidered if query flexibility becomes a bottleneck.</p>
+        </article>
+        <article>
+          <h3>Schema for Exercises and Citations</h3>
+          <p>Andy proposed a schema with tables for exercises, muscle groups, research citations (with DOI and study quality rating), and user workout logs. Approved with minor revisions to the citations table.</p>
+        </article>
+        <article>
+          <h3>User Authentication Approach</h3>
+          <p>The team agreed on JWT-based auth with HTTP-only cookies for refresh tokens and short-lived access tokens.</p>
+        </article>
+      </section>
+
+      <section id="comments">
+        <h2>Miscellaneous Comments / Questions / Concerns</h2>
+        <ul>
+          <li>Mikey reminded the team that the beta deadline is May 5 and asked everyone to flag blockers in the project board.</li>
+          <li>Tim raised a concern about keeping the research citation data up to date as new studies are published.</li>
+        </ul>
+      </section>
+
+      <section id="diagrams">
+        <h2>Diagrams</h2>
+        <figure>
+          <img src="diagramcse110.png" alt="High-level system architecture showing the React frontend, REST API, recommendation engine, and PostgreSQL database" />
+          <figcaption>Figure 1: Science-Based Fitness App system architecture overview</figcaption>
+        </figure>
+      </section>
+
+      <section id="recordings">
+        <h2>Recordings</h2>
+        <figure>
+          <figcaption>Audio recording of the meeting</figcaption>
+          <audio controls>
+            <source src="e1ac-3bcd-44e5-a602-bc223adacb54.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+        <figure>
+          <figcaption>Video recording of the meeting</figcaption>
+          <video controls>
+            <source src="catcse110.MOV" type="video/mp4" />
+            Your browser does not support the video element.
+          </video>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p>Minutes recorded by Ethan Huynh. Next meeting: April 17, 2026.</p>
+    </footer>
   </body>
 </html>
