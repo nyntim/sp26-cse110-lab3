@@ -63,19 +63,19 @@ audio {
     #recordings {
         grid-column: 1 / -1; /* Make recordings span across both columns to extend its length */
         padding: 0; /* Fill the outline by removing padding */
-        
-        & h2 {
-            padding: 10px; /* Restore padding for the title */
-            margin: 0;
-        }
+    }
 
-        & figure {
-            margin: 0;
-        }
+    #recordings h2 {
+        padding: 10px; /* Restore padding for the title */
+        margin: 0;
+    }
+
+    #recordings figure {
+        margin: 0;
     }
 }
 
-/* Modern CSS: Nesting */
+/* Header styling */
 header {
     display: flex;
     flex-direction: column;
@@ -86,16 +86,16 @@ header {
     color: rgba(255, 255, 255, 0.9);
     position: relative;
     text-align: center;
+}
 
-    & h1 {
-        margin: 0;
-        font-size: 1.3rem; /* Slightly smaller for mobile */
-    }
-    
-    & h2, & h3 {
-        margin: 5px 0 0 0;
-        font-size: 1rem;
-    }
+header h1 {
+    margin: 0;
+    font-size: 1.3rem; /* Slightly smaller for mobile */
+}
+
+header h2, header h3 {
+    margin: 5px 0 0 0;
+    font-size: 1rem;
 }
 
 footer {
@@ -117,9 +117,15 @@ section:has(h2) { background-color: #f9f9f9; }
 #attendance { font-weight: bold; }
 a:hover { color: #ff0000; }
 
-/* Nested selectors for articles to reduce whitespace */
+/* Article styling to reduce whitespace */
 article {
     margin-bottom: 10px;
-    & h3 { margin: 0 0 5px 0; }
-    & p { margin: 0; }
+}
+
+article h3 {
+    margin: 0 0 5px 0;
+}
+
+article p {
+    margin: 0;
 }
