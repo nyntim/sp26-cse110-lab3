@@ -1,0 +1,49 @@
+/* Base CSS & Box Model Implementation */
+
+/* Color Palette Demonstration */
+body {
+    background-color: hsl(210, 20%, 95%); /* HSL */
+    color: #333333; /* Hex */
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(70, 130, 180); /* RGB */
+    color: rgba(255, 255, 255, 0.9); /* RGBA */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Box Model Demonstration */
+main {
+    /* Margin: Shorthand */
+    margin: 20px 40px 20px 40px;
+
+    /* Padding: Longhand */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /* Border: Shorthand */
+    border: 2px solid #4682b4;
+    
+    /* Border: Longhand properties */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+section {
+    margin: 10px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+}
