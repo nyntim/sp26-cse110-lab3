@@ -1,17 +1,70 @@
 /* Base CSS & Box Model Implementation */
 
-/* Color Palette Demonstration */
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+}
+
+/* Element Selector */
 body {
     background-color: hsl(210, 20%, 95%);
     color: #333333;
     font-family: sans-serif;
     margin: 0;
-    padding: 0;
-    /* Height constraint */
     min-height: 100vh;
 }
 
-/* Layout: Grid */
+/* ID Selector */
+#attendance {
+    font-weight: bold;
+}
+
+/* Class Selector */
+.meeting-section {
+    padding: 10px;
+    border: 1px solid #cccccc;
+}
+
+/* Attribute Selector */
+img[alt] {
+    border: 2px solid #ddd;
+}
+
+/* Combinators */
+/* Descendant: main sections, Child: main > section, Sibling: h2 + ul, Adjacent: li + li */
+main section h2 { color: #4682b4; }
+main > section { margin-bottom: 20px; }
+h2 + ul { margin-top: 10px; }
+li + li { margin-top: 5px; }
+
+/* Modern CSS: :has() */
+/* Target sections that have a header */
+section:has(h2) {
+    background-color: #f9f9f9;
+}
+
+/* Modern CSS: Nesting */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(70, 130, 180);
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+
+    & h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+}
+
+/* Pseudo-classes */
+a:hover { color: #ff0000; }
+a:active { color: #00ff00; }
+
+/* Existing layout rules */
 main {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -24,21 +77,7 @@ main {
     background-color: #ffffff;
 }
 
-/* Layout: Flexbox */
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(70, 130, 180);
-    color: rgba(255, 255, 255, 0.9);
-    /* Positioning: Relative */
-    position: relative;
-}
-
 footer {
-    /* Positioning: Fixed */
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -46,13 +85,4 @@ footer {
     background-color: #333;
     color: white;
     padding: 10px;
-}
-
-/* Display experiments */
-.hidden-demo { display: none; }
-.inline-demo { display: inline-block; padding: 5px; border: 1px solid black; }
-
-section {
-    padding: 10px;
-    border: 1px solid #cccccc;
 }
