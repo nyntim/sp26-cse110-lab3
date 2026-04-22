@@ -2,48 +2,57 @@
 
 /* Color Palette Demonstration */
 body {
-    background-color: hsl(210, 20%, 95%); /* HSL */
-    color: #333333; /* Hex */
+    background-color: hsl(210, 20%, 95%);
+    color: #333333;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    /* Height constraint */
+    min-height: 100vh;
 }
 
-header {
-    background-color: rgb(70, 130, 180); /* RGB */
-    color: rgba(255, 255, 255, 0.9); /* RGBA */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 20px;
-}
-
-/* Box Model Demonstration */
+/* Layout: Grid */
 main {
-    /* Margin: Shorthand */
-    margin: 20px 40px 20px 40px;
-
-    /* Padding: Longhand */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    /* Border: Shorthand */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
     border: 2px solid #4682b4;
-    
-    /* Border: Longhand properties */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 8px;
+    background-color: #ffffff;
 }
+
+/* Layout: Flexbox */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(70, 130, 180);
+    color: rgba(255, 255, 255, 0.9);
+    /* Positioning: Relative */
+    position: relative;
+}
+
+footer {
+    /* Positioning: Fixed */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Display experiments */
+.hidden-demo { display: none; }
+.inline-demo { display: inline-block; padding: 5px; border: 1px solid black; }
 
 section {
-    margin: 10px;
     padding: 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #cccccc;
+    border: 1px solid #cccccc;
 }
