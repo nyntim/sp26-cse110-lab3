@@ -1,46 +1,40 @@
+:root {
+    --main-bg-color: hsl(210, 20%, 95%);
+    --accent-color: #4682b4;
+}
+
 /* Base CSS & Box Model Implementation */
 
-/* Universal Selector */
 * {
     box-sizing: border-box;
 }
 
-/* Element Selector */
 body {
-    background-color: hsl(210, 20%, 95%);
+    background-color: var(--main-bg-color, #f4f4f4); /* CSS variable with fallback */
     color: #333333;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     min-height: 100vh;
 }
 
-/* ID Selector */
-#attendance {
-    font-weight: bold;
+/* Layout: Grid */
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: #ffffff;
 }
 
-/* Class Selector */
-.meeting-section {
-    padding: 10px;
-    border: 1px solid #cccccc;
-}
-
-/* Attribute Selector */
-img[alt] {
-    border: 2px solid #ddd;
-}
-
-/* Combinators */
-/* Descendant: main sections, Child: main > section, Sibling: h2 + ul, Adjacent: li + li */
-main section h2 { color: #4682b4; }
-main > section { margin-bottom: 20px; }
-h2 + ul { margin-top: 10px; }
-li + li { margin-top: 5px; }
-
-/* Modern CSS: :has() */
-/* Target sections that have a header */
-section:has(h2) {
-    background-color: #f9f9f9;
+/* Responsiveness: Media Queries */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 2fr; /* Tablet/Desktop */
+    }
 }
 
 /* Modern CSS: Nesting */
@@ -60,23 +54,6 @@ header {
     }
 }
 
-/* Pseudo-classes */
-a:hover { color: #ff0000; }
-a:active { color: #00ff00; }
-
-/* Existing layout rules */
-main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 2px solid #4682b4;
-    border-radius: 8px;
-    background-color: #ffffff;
-}
-
 footer {
     position: fixed;
     bottom: 0;
@@ -86,3 +63,9 @@ footer {
     color: white;
     padding: 10px;
 }
+
+/* Other selectors... */
+section { padding: 10px; border: 1px solid #cccccc; }
+section:has(h2) { background-color: #f9f9f9; }
+#attendance { font-weight: bold; }
+a:hover { color: #ff0000; }
